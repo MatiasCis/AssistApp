@@ -1,0 +1,38 @@
+<ion-app>
+  <ion-menu content-id="main2" menuId="first" side="start">
+      <ion-header>
+          <ion-toolbar>
+              <ion-title>Menu</ion-title>
+          </ion-toolbar>
+      </ion-header>
+      <ion-content>
+          <ion-list>
+              <ion-menu-toggle  *ngFor="let a of componenteAlumno">
+                  <ion-item [routerLink]="a.redirecTo" detail=true>
+                      <ion-icon slot="start" [name]="a.icon" color="primary"></ion-icon>
+                      {{ a.name }}
+                  </ion-item>
+              </ion-menu-toggle>
+          </ion-list>
+      </ion-content>
+  </ion-menu>
+  <ion-menu content-id="main2" menuId="second" side="start">
+      <ion-header>
+          <ion-toolbar>
+              <ion-title>Menu</ion-title>
+          </ion-toolbar>
+      </ion-header>
+      <ion-content>
+          <ion-list>
+              <ion-menu-toggle *ngFor="let c of componenteProfesor">
+                  <ion-item [routerLink]="c.redirecTo" detail=true>
+                      <ion-icon slot="start" [name]="c.icon" color="primary"></ion-icon>
+                      {{ c.name }}
+                  </ion-item>
+              </ion-menu-toggle>
+          </ion-list>
+      </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main1"></ion-router-outlet>
+  <ion-router-outlet id="main2"></ion-router-outlet>
+</ion-app>

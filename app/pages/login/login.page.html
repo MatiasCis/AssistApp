@@ -1,0 +1,39 @@
+<ion-content>
+    <ion-card>
+        <div class="container">
+            <img src="assets/logo2.png">
+        </div>
+        <div class="title">
+            <h2 class="tituloTest">Bienvenido a AsistApp</h2>
+        </div>
+        <ion-card-content>
+            <form [formGroup]="formularioLogin">
+                <ion-item>
+                    <ion-label class="textoCorreo"position="floating">Correo: </ion-label>
+                    <ion-input type="email" formControlName="correo"></ion-input>
+                </ion-item>
+                <div class="err" *ngFor="let er of errors">
+                    <div *ngIf="formularioLogin.get('correo').hasError(er.type) && (formularioLogin.get('correo').touched || formularioLogin.get('correo').touched.dirty)  ">
+                        {{er.message}}
+                    </div>
+                </div>
+                <ion-item>
+                    <ion-label class="textoPass"position="floating">Password: </ion-label>
+                    <ion-input type="password" formControlName="password"></ion-input>
+                </ion-item>
+                <div class="err" *ngFor="let er of errors">
+                    <div *ngIf="formularioLogin.get('password').hasError(er.type) && (formularioLogin.get('password').touched || formularioLogin.get('password').touched.dirty)  ">
+                        {{er.message}}
+                    </div>
+                </div>
+            </form>
+            <br>
+            <ion-button class="ingreso"(click)="Ingresar()" expand="block" fill="solid" shape="round">
+                Ingresar
+            </ion-button>
+        </ion-card-content>
+    </ion-card>
+    <div class="centro">
+        <ion-label><a class="noTienes"[routerLink]="['/registro']">¿ No tienes cuenta?</a></ion-label>
+    </div>
+</ion-content>

@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-button (click)="mostrarMenu()">
+                <ion-icon slot="start" name="menu-outline" color="primary"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title>Inicio</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+
+    <img width="200px" class="imageProfe" src="assets/teacher.png" />
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title class="bienvenido">Bienvenid@ </ion-card-title>
+            <ion-card-subtitle>
+                <h1>{{datosUsuario?.nomUsuario}}</h1>
+            </ion-card-subtitle>
+        </ion-card-header>
+    </ion-card>
+
+    <br>
+    <div class="logout">
+        <ion-button size="default" (click)="logout()" color="primary" shape="round">
+            Logout
+        </ion-button>
+    </div>
+</ion-content>

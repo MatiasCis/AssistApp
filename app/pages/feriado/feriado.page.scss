@@ -1,0 +1,33 @@
+ion-content{
+    --background: linear-gradient(180deg, 
+    #ffffdb 0, #f5ffd4 12.5%,
+     #e7fdcf 25%, #d8f9c9 37.5%, #c6f4c4 50%, #b3efc1 62.5%,
+     #a0ebc0 75%, #8ce6c1 87.5%, #77e3c4 100%);
+}
+
+ion-toolbar{
+    --background:white;
+    --color:black;
+}
+
+.botonQr{
+    margin-left: 40%;
+}
+
+ion-card{
+
+    --background:white;
+    color: black;
+    border-radius: 30px;
+}
+
+h1{
+    text-align: center;
+    
+}
+
+.logout{
+    
+    text-align: center;
+}
+

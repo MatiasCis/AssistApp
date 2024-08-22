@@ -1,0 +1,81 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/" color="primary"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Registro Nuevo</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-card>
+        <ion-card-content>
+            <form [formGroup]="formularioRegistro" (keyup.enter)="CrearUsuario()">
+                <ion-item>
+                    <ion-label position="floating">Nombre</ion-label>
+                    <ion-input type="text" formControlName="nombre"></ion-input>
+                </ion-item>
+                <div class="err" *ngFor="let er of errors">
+                    <div
+                        *ngIf="formularioRegistro.get('nombre').hasError(er.type) && (formularioRegistro.get('nombre').touched || formularioRegistro.get('nombre').touched.dirty)  ">
+                        {{er.message}}
+                    </div>
+                </div>
+                <ion-item>
+                    <ion-label position="floating">Apellido</ion-label>
+                    <ion-input type="text" formControlName="apellido"></ion-input>
+                </ion-item>
+                <div class="err" *ngFor="let er of errors">
+                    <div
+                        *ngIf="formularioRegistro.get('apellido').hasError(er.type) && (formularioRegistro.get('apellido').touched || formularioRegistro.get('apellido').touched.dirty)  ">
+                        {{er.message}}
+                    </div>
+                </div>
+                <ion-item>
+                    <ion-label position="floating">Correo</ion-label>
+                    <ion-input type="email" formControlName="correo"></ion-input>
+                </ion-item>
+                <div class="err" *ngFor="let er of errors">
+                    <div
+                        *ngIf="formularioRegistro.get('correo').hasError(er.type) && (formularioRegistro.get('correo').touched || formularioRegistro.get('correo').touched.dirty)  ">
+                        {{er.message}}
+                    </div>
+                </div>
+                <ion-list>
+                    <ion-item>
+                        <ion-select formControlName="tipo" placeholder="Tipo" (ionChange)="handleChange($event)">
+                            <ion-select-option value="profesor">Profesor</ion-select-option>
+                            <ion-select-option value="alumno">Alumno</ion-select-option>
+                        </ion-select>
+                    </ion-item>
+                </ion-list>
+                <ion-item>
+                    <ion-label position="floating">Contraseña</ion-label>
+                    <ion-input type="password" formControlName="password" [(ngModel)]="registerArray.password" ngModel
+                        name="ngModel"></ion-input>
+                </ion-item>
+                <div class="err" *ngFor="let er of errors">
+                    <div
+                        *ngIf="formularioRegistro.get('password').hasError(er.type) && (formularioRegistro.get('password').touched || formularioRegistro.get('password').touched.dirty)  ">
+                        {{er.message}}
+                    </div>
+                </div>
+                <ion-item>
+                    <ion-label position="floating">Confirmar Contraseña</ion-label>
+                    <ion-input type="password" formControlName="confirmaPass" [(ngModel)]="registerArray.confirmaPass" ngModel name="ngModel"></ion-input>
+                </ion-item>
+                <span *ngIf="registerArray.password !== registerArray.confirmaPass">Las contraseñas no coinciden</span>
+                <div class="err" *ngFor="let er of errors">
+                    <div
+                        *ngIf="formularioRegistro.get('confirmaPass').hasError(er.type) && (formularioRegistro.get('confirmaPass').touched || formularioRegistro.get('confirmaPass').touched.dirty)  ">
+                        {{er.message}}
+                    </div>
+                </div>
+            </form>
+            <br>
+            <ion-button (click)="CrearUsuario()" [disabled]="formularioRegistro.invalid" expand="block" fill="solid"
+                shape="round">
+                Registrar
+            </ion-button>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

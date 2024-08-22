@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="start" name="menu-outline" color="primary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Tomar Asistencia</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <form [formGroup]="formularioAsistencia" (keyup.enter)="crearAsistencia()">
+        <ion-input type="text" disabled formControlName="asistencia" [(ngModel)]="datoScaneados"
+          placeholder="Informacion del escaner">
+          {{datoScaneados}}
+        </ion-input>
+      </form>
+      <div class="guardar">
+        <ion-button  (click)="crearAsistencia()">Guardar</ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <div class="scanner">
+    <ion-button (click)="scan()">Scannear</ion-button>
+  </div>
+</ion-content>

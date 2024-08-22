@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="start" name="menu-outline" color="primary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Generar QR</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card class="ion-text-center">
+    <ion-card-content>
+      <ion-item>
+        <ion-select placeholder="Asignatura"  [(ngModel)]="usuario.modulo">
+          <ion-select-option value="ProgramaciónMovil">Programación movil</ion-select-option>
+          <ion-select-option value="ProgramaciónBD" >Programación de BD</ion-select-option>
+          <ion-select-option value="Programacion Web" > Programacion Web</ion-select-option>
+          <ion-select-option value="Ingenieria" > Ingenieria de Software</ion-select-option>
+          <ion-select-option value="Calidad" > Calidad de software</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-input disabled [(ngModel)]="usuario.fecha"></ion-input>
+      </ion-item>
+      <ion-button expand="block" class="ion-margin" (click)="generaScan()">
+        Generate QR Code
+      </ion-button>
+      <qrcode [qrdata]="qrCodeString + qrFecha" [width]="256" [errorCorrectionLevel]="'M'">
+      </qrcode>
+    </ion-card-content>
+  </ion-card>
+  <ion-button expand="block" class="ion-margin" (click)="verScan()">
+    Ver QR Code
+  </ion-button>
+
+  <ion-item>
+    <ion-label class="ion-text-wrap">Scan Result: {{scannedResult}} {{scannedResultDate}}</ion-label>
+  </ion-item>
+</ion-content>

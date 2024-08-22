@@ -1,0 +1,68 @@
+ion-toolbar {
+    --background: white;
+    --color: black;
+}
+
+img {
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    border-radius: 60%;
+    margin-top: 40px;
+
+    
+}
+
+ion-card {
+    background: transparent;
+    margin-top: 70px;
+}
+
+ion-card-subtitle {
+    text-align: center;
+}
+
+ion-content {
+    --background: linear-gradient(180deg, #ffffdb 0, #f5ffd4 12.5%, #e7fdcf 25%, #d8f9c9 37.5%, #c6f4c4 50%, #b3efc1 62.5%, #a0ebc0 75%, #8ce6c1 87.5%, #77e3c4 100%);
+}
+
+.container {
+    margin-left: 33%;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.titulo {
+    margin-bottom: 10px;
+}
+
+ion-item {
+    border: black 1px solid;
+    margin-right: 10px;
+    margin-left: 10px;
+    --background: white;
+    color: black;
+}
+
+.Logear {
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.olvidaste {
+    margin-top: 20px;
+    margin-left: 25%;
+}
+
+.centro {
+    text-align: center;
+}
+
+.title {
+    text-align: center;
+}
+
+.err {
+    color: red;
+}

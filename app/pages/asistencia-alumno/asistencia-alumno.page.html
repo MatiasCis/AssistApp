@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="start" name="menu-outline" color="primary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title >Asistencia de alumnos</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-item *ngFor="let atomada of datosAsistencia">
+      <ion-label>{{atomada.asistenciaAlumno}}</ion-label> 
+    </ion-item>
+</ion-content>
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-button class="botonQr"  routerLink="/tomar-as">
+      <ion-icon slot="icon-only"  name="qr-code-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

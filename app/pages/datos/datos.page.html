@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="start" name="menu-outline" color="primary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Modificar Datos</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form>
+    <ion-item *ngFor="let dato of datos">
+      <ion-label>Nombre: </ion-label>
+      <ion-input type="text" [(ngModel)]="newDato.nomUsuario" name="nombre">{{dato.nomUsuario}}
+      </ion-input>
+    </ion-item>
+    <ion-item *ngFor="let dato of datos">
+      <ion-input type="text" [(ngModel)]="newDato.apeUsuario"  name="apellido">{{dato.apeUsuario}} </ion-input>
+    </ion-item>
+    <ion-item *ngFor="let dato of datos">
+      <ion-input type="text" [(ngModel)]="newDato.correoUsuario" name="mail"> {{dato.correoUsuario}}</ion-input>
+    </ion-item>
+    <ion-item *ngFor="let dato of datos">
+      <ion-input type="password" [(ngModel)]="newDato.passUsuario"  name="contraseña">{{dato.passUsuario}}</ion-input>
+    </ion-item>
+    <br>
+    <ion-button (click)="actualizarDatos()" expand="block" type="primary" shape="round">
+      Guardar Cambios
+    </ion-button>
+  </form>
+</ion-content>
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-button class="botonQr" (click)="scanner()" >
+      <ion-icon slot="icon-only" name="qr-code-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
